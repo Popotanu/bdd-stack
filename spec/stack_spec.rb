@@ -29,8 +29,8 @@ RSpec.describe Stack do
   end
 
   describe '#pop' do
+    subject { stack.pop }
     context '空のstack' do
-      subject { stack.pop }
       describe 'nilを返す' do
         it { expect(subject).to be nil }
       end
@@ -38,6 +38,35 @@ RSpec.describe Stack do
         it do
           subject
           expect(stack.length).to eq 0
+        end
+      end
+    end
+    context '1をpush済のstack' do
+      before do
+        stack.push 1
+      end
+      describe '1を返す' do
+        it { expect(subject).to eq 1}
+      end
+      describe 'lengthは0' do
+        it do
+          subject
+          expect(stack.length).to eq 0
+        end
+      end
+    end
+    context '1と5push済のstack' do
+      before do
+        stack.push 1
+        stack.push 5
+      end
+      describe '5を返す' do
+        it { expect(subject).to eq 5 }
+      end
+      describe 'lengthは1' do
+        it do
+          subject
+          expect(stack.length).to eq 1
         end
       end
     end

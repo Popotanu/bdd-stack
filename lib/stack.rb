@@ -13,6 +13,6 @@ class Stack
   end
 
   def pop
-    nil
+    @buffer.pop
   end
 end
