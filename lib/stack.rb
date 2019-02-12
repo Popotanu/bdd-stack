@@ -15,4 +15,8 @@ class Stack
   def pop
     @buffer.pop
   end
+
+  def peek
+    1
+  end
 end

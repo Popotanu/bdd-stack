@@ -71,4 +71,14 @@ RSpec.describe Stack do
       end
     end
   end
+
+  describe '#peek' do
+    subject { stack.peek }
+    context '1をpush済のstack' do
+      before { stack.push 1 }
+      it '1を返す' do
+        expect(subject).to eq 1
+      end
+    end
+  end
 end
