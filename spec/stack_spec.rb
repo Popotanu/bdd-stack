@@ -79,6 +79,22 @@ RSpec.describe Stack do
       it '1を返す' do
         expect(subject).to eq 1
       end
+
+      context 'さらに2をpush' do
+        before { stack.push 2}
+        it '2を返す' do
+          expect(subject).to eq 2
+        end
+        it 'lengthは2である' do
+          subject
+          expect(stack.length).to eq 2
+        end
+      end
+    end
+    context 'stackが空' do
+      it 'nilを返す' do
+        expect(subject).to eq nil
+      end
     end
   end
 end

@@ -17,6 +17,6 @@ class Stack
   end
 
   def peek
-    1
+    @buffer.last
   end
 end
