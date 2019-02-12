@@ -11,4 +11,8 @@ class Stack
   def length
     @buffer.length
   end
+
+  def pop
+    nil
+  end
 end
